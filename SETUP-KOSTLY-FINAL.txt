@@ -1,0 +1,24 @@
+KOSTLY - SETUP
+
+1. Backup folder proyek dan database lama terlebih dahulu.
+2. Ekstrak folder kost-laravel ke C:\xampp\htdocs\kost-laravel (atau folder proyek kamu).
+3. Pastikan .env berisi konfigurasi database MySQL yang benar. Buat database kosong bernama kostly jika belum ada, lalu sesuaikan DB_DATABASE, DB_USERNAME, DB_PASSWORD.
+4. Dari terminal di folder proyek jalankan:
+   composer install
+   php artisan key:generate   (hanya jika APP_KEY masih kosong; jangan ganti APP_KEY proyek yang sudah punya data terenkripsi)
+   php artisan migrate
+   php artisan optimize:clear
+   php artisan serve
+5. Daftar akun Penyewa atau Pemilik lewat halaman Daftar. Password minimal 8 karakter.
+6. Untuk akun admin, buat melalui terminal:
+   php artisan tinker
+   lalu jalankan:
+   \App\Models\User::create(['name'=>'Admin Kostly','email'=>'admin@kostly.local','password'=>bcrypt('GANTI_PASSWORD_INI'),'role'=>'admin']);
+   Ganti email dan password contoh tersebut sebelum dipakai. Ketik exit untuk keluar.
+7. Login sesuai akun. Pemilik menambahkan kost; listing berstatus pending sampai admin menyetujui; setelah disetujui, listing muncul ke penyewa.
+8. Foto URL saat ini menerima URL gambar. Pastikan alamat/koordinat lokasi benar sebelum dipublikasikan.
+
+CATATAN
+- Migrasi baru membuat kolom role pada users, tabel properties, dan bookings.
+- Jangan jalankan migrate:fresh pada database yang berisi data karena perintah itu menghapus tabel.
+- Fitur peta eksternal membutuhkan internet. Titik harus diverifikasi dari alamat/koordinat yang benar.

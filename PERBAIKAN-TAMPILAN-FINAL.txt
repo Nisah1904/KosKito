@@ -1,0 +1,8 @@
+KOSTLY — PERBAIKAN TAMPILAN
+
+Perubahan pada ZIP ini:
+1. listings.blade.php: peta dipindahkan ke luar section hasil agar selalu berada di bawah grid kost.
+2. kostly.css: grid hasil pencarian dipaksa 3 kolom dengan kartu seragam, dan form login/register distandarkan font, ukuran input, jarak, serta lebar card.
+3. cost-planner.blade.php: menghapus teks debug "php artisan" yang muncul di halaman Hitung Biaya.
+
+Catatan: grid tetap tiga kolom pada layar kecil; kartu menjadi lebih rapat pada layar kecil. Jalankan php artisan optimize:clear setelah mengganti project. Tidak menjalankan migrate:fresh.

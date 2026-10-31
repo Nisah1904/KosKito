@@ -1,0 +1,3 @@
+name,price,address,type,rooms,facilities,latitude,longitude,campus_id,phone,source_url
+Kost Contoh Impor Putri,850000,"Jl. Contoh Raya No. 1, Bukit Besar, Palembang",putri,5,"wifi,kamar mandi dalam,parkir motor",-2.9885,104.7289,1,081200000000,https://contoh.example/kost-impor
+Kost Contoh Kedua Tanpa Koordinat,700000,"Jl. Contoh Kedua No. 2, Indralaya, Ogan Ilir",campur,4,"wifi,laundry",,,,,https://contoh.example/kost-2
